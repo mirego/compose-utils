@@ -1,0 +1,48 @@
+name: CI
+
+on:
+  # Trigger the workflow on push only for the master branch
+  push:
+    branches:
+      - master
+  # Trigger the workflow on any pull requests
+  pull_request:
+    branches:
+      - "**"
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 10.17.x
+
+      - name: Run prettier
+        run: npx prettier --check .
+
+      - name: Gradle Cache
+        uses: actions/cache@v3
+        with:
+          key: gradle-${{ hashFiles('**/gradle.properties') }}
+          restore-keys: gradle-
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+
+      - name: Setup Java
+        uses: actions/setup-java@v1
+        with:
+          java-version: 11
+
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
+
+      - name: Build with Gradle
+        run: ./gradlew check --parallel
