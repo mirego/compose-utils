@@ -17,12 +17,7 @@ import androidx.compose.foundation.ScrollState
 import androidx.compose.foundation.layout.ColumnScope
 import androidx.compose.foundation.layout.RowScope
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.WindowInsets
-import androidx.compose.foundation.layout.asPaddingValues
 import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.ime
-import androidx.compose.foundation.layout.navigationBars
-import androidx.compose.foundation.layout.statusBars
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyListState
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -138,15 +133,6 @@ fun ColumnScope.SpacerFill() {
 fun RowScope.SpacerFill() {
     Spacer(modifier = Modifier.weight(1f, fill = true))
 }
-
-@Composable
-fun statusBarPadding(): Dp = WindowInsets.statusBars.asPaddingValues().calculateTopPadding()
-
-@Composable
-fun navigationBarPadding(): Dp = WindowInsets.navigationBars.asPaddingValues().calculateBottomPadding()
-
-@Composable
-fun imePadding(): Dp = WindowInsets.ime.asPaddingValues().calculateBottomPadding()
 
 @Composable
 fun animateElevationWithLazyListState(

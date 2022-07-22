@@ -37,9 +37,9 @@ android {
 }
 
 dependencies {
-    api("androidx.compose.foundation:foundation:${Versions.jetpackCompose}")
-    api("androidx.compose.ui:ui:${Versions.jetpackCompose}")
-    api("androidx.compose.animation:animation:${Versions.jetpackCompose}")
+    api("androidx.compose.foundation:foundation:${Versions.JETPACK_COMPOSE}")
+    api("androidx.compose.ui:ui:${Versions.JETPACK_COMPOSE}")
+    api("androidx.compose.animation:animation:${Versions.JETPACK_COMPOSE}")
 }
 
 tasks {

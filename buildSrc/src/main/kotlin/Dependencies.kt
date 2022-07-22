@@ -1,8 +1,4 @@
-import org.gradle.api.Project
-
-val Project.Versions: Versions
-    get() = Versions(this)
-
-class Versions(project: Project) {
-    val jetpackCompose = "1.2.0-rc03"
+object Versions {
+    const val JETPACK_COMPOSE = "1.2.0-rc03"
+    const val ANDROID_GRADLE_PLUGIN = "7.3.0-beta05"
 }
