@@ -57,11 +57,6 @@ afterEvaluate {
                 artifactId = "utils"
                 artifact(tasks["sourcesJar"])
             }
-            create<MavenPublication>("debug") {
-                from(components["debug"])
-                artifactId = "utils"
-                artifact(tasks["sourcesJar"])
-            }
         }
     }
 }
