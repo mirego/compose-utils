@@ -1,5 +1,5 @@
 # Compose Utils
-
+<div>
   <p>Compose Utils is a library that contains several helpful components and extension methods to help you build the best Compose layouts.</p>
   <a href="https://github.com/mirego/compose-utils/tags"><img src="https://img.shields.io/github/tag/mirego/compose-utils.svg?label=latest%20release"></a>
   <img src="https://img.shields.io/maven-metadata/v?label=latest%20dev&metadataUrl=https%3A%2F%2Fmirego-maven.s3.amazonaws.com%2Fpublic%2Fcom%2Fmirego%2Fcompose%2Futils%2Fmaven-metadata.xml" />
@@ -7,7 +7,7 @@
   <a href="https://github.com/mirego/compose-utils/actions/workflows/ci.yml"><img src="https://github.com/mirego/compose-utils/actions/workflows/ci.yml/badge.svg" /></a>
   <a href="https://github.com/mirego/compose-utils/actions/workflows/cd.yml"><img src="https://github.com/mirego/compose-utils/actions/workflows/cd.yml/badge.svg" /></a>
   <a href="https://opensource.org/licenses/BSD-3-Clause"><img src="https://img.shields.io/badge/License-BSD_3--Clause-blue.svg" /></a>
-
+</div>
 ## License
 
 Compose Utils is © 2022 [Mirego](https://www.mirego.com) and may be freely distributed under the [New BSD license](http://opensource.org/licenses/BSD-3-Clause). See the [`LICENSE.md`](LICENSE.md) file.
