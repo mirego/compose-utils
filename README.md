@@ -8,6 +8,7 @@
   <a href="https://github.com/mirego/compose-utils/actions/workflows/cd.yml"><img src="https://github.com/mirego/compose-utils/actions/workflows/cd.yml/badge.svg" /></a>
   <a href="https://opensource.org/licenses/BSD-3-Clause"><img src="https://img.shields.io/badge/License-BSD_3--Clause-blue.svg" /></a>
 </div>
+
 ## License
 
 Compose Utils is © 2022 [Mirego](https://www.mirego.com) and may be freely distributed under the [New BSD license](http://opensource.org/licenses/BSD-3-Clause). See the [`LICENSE.md`](LICENSE.md) file.
