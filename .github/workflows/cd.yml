@@ -8,7 +8,7 @@ on:
 jobs:
   cd:
     name: Build library CD
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     continue-on-error: false
     steps:
       - name: Checkout
