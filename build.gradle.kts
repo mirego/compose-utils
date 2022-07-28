@@ -16,3 +16,13 @@ release {
     )
     updateVersionPart = 2
 }
+
+tasks {
+    val writeDevVersion by registering(WriteProperties::class) {
+        outputFile = file("${rootDir}/gradle.properties")
+        properties(java.util.Properties().apply { load(outputFile.reader()) }.mapKeys { it.key.toString() })
+        val gitCommits = "git rev-list --count HEAD".runCommand(workingDir = rootDir)
+        val originalVersion = project.version.toString().replace("-dev\\w+".toRegex(), "")
+        property("version", "$originalVersion-dev$gitCommits")
+    }
+}
