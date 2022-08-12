@@ -45,7 +45,7 @@ dependencies {
 tasks {
     val sourcesJar by creating(Jar::class) {
         archiveClassifier.set("sources")
-        from(android.sourceSets.getByName("main").kotlin.srcDirs().toString())
+        from(kotlin.sourceSets["main"].kotlin.srcDirs)
     }
 }
 
