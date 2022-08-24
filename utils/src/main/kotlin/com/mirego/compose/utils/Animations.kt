@@ -75,7 +75,7 @@ fun <T : Any> AnimatedVisibilityWithNullable(
         remembered.value?.let {
             content(it)
         }
-        DisposableEffect(key1 = Unit) {
+        DisposableEffect(key1 = stateCleanNeeded) {
             onDispose {
                 if (stateCleanNeeded) {
                     remembered.value = null
