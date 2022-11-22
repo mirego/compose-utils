@@ -2,6 +2,7 @@ plugins {
     id("com.android.library")
     id("kotlin-android")
     id("mirego.publish")
+    id("org.jlleitschuh.gradle.ktlint")
 }
 
 repositories {
@@ -40,6 +41,7 @@ dependencies {
     api("androidx.compose.foundation:foundation:${Versions.JETPACK_COMPOSE}")
     api("androidx.compose.ui:ui:${Versions.JETPACK_COMPOSE}")
     api("androidx.compose.animation:animation:${Versions.JETPACK_COMPOSE}")
+    api("androidx.compose.material:material:${Versions.JETPACK_COMPOSE}")
 }
 
 tasks {
@@ -59,4 +61,8 @@ afterEvaluate {
             }
         }
     }
+}
+
+ktlint {
+    android.set(true)
 }
