@@ -30,7 +30,7 @@ android {
         targetCompatibility(JavaVersion.VERSION_11)
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.2.0"
+        kotlinCompilerExtensionVersion = Versions.KOTLIN_COMPILER
     }
     kotlinOptions {
         jvmTarget = "11"
@@ -38,10 +38,14 @@ android {
 }
 
 dependencies {
-    api("androidx.compose.foundation:foundation:${Versions.JETPACK_COMPOSE}")
-    api("androidx.compose.ui:ui:${Versions.JETPACK_COMPOSE}")
-    api("androidx.compose.animation:animation:${Versions.JETPACK_COMPOSE}")
-    api("androidx.compose.material:material:${Versions.JETPACK_COMPOSE}")
+    val composeBom = platform("androidx.compose:compose-bom:${Versions.COMPOSE_BOM}")
+    implementation(composeBom)
+    androidTestImplementation(composeBom)
+
+    api("androidx.compose.foundation:foundation")
+    api("androidx.compose.ui:ui")
+    api("androidx.compose.animation:animation")
+    api("androidx.compose.material:material")
 }
 
 tasks {

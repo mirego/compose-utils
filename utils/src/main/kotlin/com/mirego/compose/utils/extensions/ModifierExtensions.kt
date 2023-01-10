@@ -10,6 +10,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.composed
 import androidx.compose.ui.layout.boundsInWindow
 import androidx.compose.ui.layout.onGloballyPositioned
+import androidx.compose.ui.platform.LocalInspectionMode
 import java.util.Calendar
 import kotlin.time.Duration.Companion.seconds
 
@@ -69,4 +70,12 @@ fun Modifier.swallowClicks() =
             interactionSource = remember { MutableInteractionSource() },
             indication = null
         ) {}
+    }
+
+fun Modifier.preview(block: Modifier.() -> Modifier): Modifier =
+    composed {
+        if (LocalInspectionMode.current)
+            block()
+        else
+            this
     }
