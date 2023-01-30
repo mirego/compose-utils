@@ -64,6 +64,17 @@ fun Modifier.clickable(onClick: (() -> Unit)?): Modifier =
         } ?: this
     }
 
+fun Modifier.clickableWithoutIndication(onClick: (() -> Unit)?): Modifier =
+    composed {
+        onClick?.let {
+            clickable(
+                interactionSource = remember { MutableInteractionSource() },
+                indication = null,
+                onClick = it
+            )
+        } ?: this
+    }
+
 fun Modifier.swallowClicks() =
     composed {
         clickable(
