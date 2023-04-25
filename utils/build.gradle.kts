@@ -17,7 +17,7 @@ group = "com.mirego.compose"
 android {
     defaultConfig {
         compileSdk = 33
-        minSdk = 24
+        minSdk = 21
         targetSdk = 33
     }
 
