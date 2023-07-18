@@ -22,7 +22,7 @@ jobs:
 
       - uses: actions/setup-node@v1
         with:
-          node-version: 10.17.x
+          node-version: 14
 
       - name: Run prettier
         run: npx prettier --check .
