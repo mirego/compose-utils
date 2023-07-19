@@ -20,9 +20,9 @@ jobs:
         with:
           fetch-depth: 0
 
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v1
         with:
-          node-version: 14
+          node-version: 10.17.x
 
       - name: Run prettier
         run: npx prettier --check .
@@ -37,10 +37,9 @@ jobs:
             ~/.gradle/wrapper
 
       - name: Setup Java
-        uses: actions/setup-java@v3
+        uses: actions/setup-java@v1
         with:
-          distribution: 'zulu'
-          java-version: '11'
+          java-version: 11
 
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
