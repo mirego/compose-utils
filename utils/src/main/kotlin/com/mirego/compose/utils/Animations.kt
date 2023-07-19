@@ -60,7 +60,7 @@ fun <T : Any> AnimatedVisibilityWithNullable(
 ) {
     val visible = nullableValue != null
     val remembered = remember(key1 = Unit) { mutableStateOf(nullableValue) }
-    if (remembered.value == null && nullableValue != null) {
+    if ((remembered.value == null && nullableValue != null) || (remembered.value != null && nullableValue != null && remembered.value != nullableValue)) {
         remembered.value = nullableValue
     }
     val stateCleanNeeded = remembered.value != null && nullableValue == null
