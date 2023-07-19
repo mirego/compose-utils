@@ -25,7 +25,7 @@ jobs:
           node-version: 10.17.x
 
       - name: Run prettier
-        run: npx prettier --check .
+        run: npx --no-install prettier --check .
 
       - name: Gradle Cache
         uses: actions/cache@v3
