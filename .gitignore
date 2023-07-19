@@ -27,3 +27,8 @@ generated-model
 generated-src
 generated-objc
 /common/src/commonMain/generated
+
+# Node
+yarn.lock
+**/*/yarn.lock
+node_modules/
