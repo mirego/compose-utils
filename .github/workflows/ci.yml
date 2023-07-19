@@ -24,6 +24,8 @@ jobs:
         with:
           node-version: 10.17.x
 
+      - run: npm ci
+
       - name: Run prettier
         run: npx --no-install prettier --check .
 
