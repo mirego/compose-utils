@@ -15,10 +15,11 @@ repositories {
 group = "com.mirego.compose"
 
 android {
+    namespace = "com.mirego.compose.utils"
+
     defaultConfig {
-        compileSdk = 33
+        compileSdk = 34
         minSdk = 21
-        targetSdk = 33
     }
 
     buildFeatures {
@@ -26,14 +27,20 @@ android {
         buildConfig = false
     }
     compileOptions {
-        sourceCompatibility(JavaVersion.VERSION_11)
-        targetCompatibility(JavaVersion.VERSION_11)
+        sourceCompatibility(JavaVersion.VERSION_17)
+        targetCompatibility(JavaVersion.VERSION_17)
     }
     composeOptions {
         kotlinCompilerExtensionVersion = Versions.KOTLIN_COMPILER
     }
     kotlinOptions {
-        jvmTarget = "11"
+        jvmTarget = "17"
+    }
+    publishing {
+        singleVariant("release") {
+            withJavadocJar()
+            withSourcesJar()
+        }
     }
 }
 
@@ -46,13 +53,7 @@ dependencies {
     api("androidx.compose.ui:ui")
     api("androidx.compose.animation:animation")
     api("androidx.compose.material:material")
-}
-
-tasks {
-    val sourcesJar by creating(Jar::class) {
-        archiveClassifier.set("sources")
-        from(kotlin.sourceSets["main"].kotlin.srcDirs)
-    }
+    api("androidx.core:core")
 }
 
 afterEvaluate {
@@ -61,7 +62,6 @@ afterEvaluate {
             create<MavenPublication>("release") {
                 from(components["release"])
                 artifactId = "utils"
-                artifact(tasks["sourcesJar"])
             }
         }
     }
