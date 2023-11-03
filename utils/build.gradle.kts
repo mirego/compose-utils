@@ -53,6 +53,7 @@ dependencies {
     api("androidx.compose.ui:ui")
     api("androidx.compose.animation:animation")
     api("androidx.compose.material:material")
+    api("androidx.core:core")
 }
 
 afterEvaluate {
